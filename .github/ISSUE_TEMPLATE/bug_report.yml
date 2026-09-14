@@ -1,0 +1,31 @@
+name: דיווח על בעיה
+description: משהו ב-Swift Speak לא עובד כמו שצריך
+title: "[באג] "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        תודה שעזרת לשפר את Swift Speak!
+        אם אפשר, צרף את קובץ הלוג: בהגדרות ← אודות ← "פתח קובץ לוג", וגרור את הקובץ לתיבת התיאור.
+  - type: textarea
+    id: description
+    attributes:
+      label: מה קרה?
+      description: תאר את הבעיה ומה ציפית שיקרה.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: שלבים לשחזור
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+  - type: textarea
+    id: environment
+    attributes:
+      label: פרטי מערכת
+      description: ממולא אוטומטית על ידי האפליקציה.
+      render: text
