@@ -1,0 +1,18 @@
+name: הצעת תכונה חדשה
+description: רעיון לשיפור או לתכונה חדשה ב-Swift Speak
+title: "[תכונה] "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: מה היית רוצה שהתוכנה תעשה?
+      description: תאר את התכונה, ואיך היא הייתה עוזרת לך.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: פרטי מערכת
+      description: ממולא אוטומטית על ידי האפליקציה.
+      render: text
