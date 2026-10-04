@@ -23,6 +23,14 @@ body:
         2. ...
         3. ...
   - type: upload
+    id: screenshots
+    attributes:
+      label: Screenshots and documents (optional)
+      description: Send a screenshot of the original and a screenshot of the translated screen. When translating a document, attach the original document and the translated one (PDF, Word, Excel or PowerPoint).
+    validations:
+      required: false
+      accept: ".png,.jpg,.jpeg,.gif,.webp,.pdf,.docx,.xlsx,.pptx"
+  - type: upload
     id: log
     attributes:
       label: Log file

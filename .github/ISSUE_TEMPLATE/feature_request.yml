@@ -11,6 +11,14 @@ body:
     validations:
       required: true
   - type: upload
+    id: screenshots
+    attributes:
+      label: Screenshots and documents (optional)
+      description: A screenshot, sketch or document that shows the idea (image, PDF, Word, Excel or PowerPoint).
+    validations:
+      required: false
+      accept: ".png,.jpg,.jpeg,.gif,.webp,.pdf,.docx,.xlsx,.pptx"
+  - type: upload
     id: log
     attributes:
       label: Log file (optional)
