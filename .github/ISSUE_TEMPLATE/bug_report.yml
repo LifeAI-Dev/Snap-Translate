@@ -1,31 +1,45 @@
-name: דיווח על בעיה
-description: משהו ב-Swift Speak לא עובד כמו שצריך
-title: "[באג] "
+name: Bug report
+description: Something in Snap Translate isn't working as expected
+title: "[Bug] "
 labels: [bug]
 body:
   - type: markdown
     attributes:
       value: |
-        תודה שעזרת לשפר את Swift Speak!
-        אם אפשר, צרף את קובץ הלוג: בהגדרות ← אודות ← "פתח קובץ לוג", וגרור את הקובץ לתיבת התיאור.
+        Thanks for helping improve Snap Translate!
   - type: textarea
     id: description
     attributes:
-      label: מה קרה?
-      description: תאר את הבעיה ומה ציפית שיקרה.
+      label: What happened?
+      description: Describe the problem and what you expected to happen.
     validations:
       required: true
   - type: textarea
     id: steps
     attributes:
-      label: שלבים לשחזור
+      label: Steps to reproduce
       placeholder: |
         1. ...
         2. ...
         3. ...
+  - type: upload
+    id: log
+    attributes:
+      label: Log file
+      description: |
+        The log file is `%LOCALAPPDATA%\SnapTranslate\error.log`. To upload it:
+        1. Click the box below. A file window opens.
+        2. Paste `%LOCALAPPDATA%\SnapTranslate\error.log` into the **File name** field and press **Enter**.
+
+        Or open the folder yourself: press **Win+R**, paste `%LOCALAPPDATA%\SnapTranslate`, press **Enter**, and drag `error.log` into the box below.
+    validations:
+      required: true
+      accept: ".log,.txt"
   - type: textarea
     id: environment
     attributes:
-      label: פרטי מערכת
-      description: ממולא אוטומטית על ידי האפליקציה.
+      label: System details
+      description: Filled in automatically by the app.
       render: text
+    validations:
+      required: true

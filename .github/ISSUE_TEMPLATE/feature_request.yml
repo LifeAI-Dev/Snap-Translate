@@ -1,18 +1,35 @@
-name: הצעת תכונה חדשה
-description: רעיון לשיפור או לתכונה חדשה ב-Swift Speak
-title: "[תכונה] "
+name: Feature request
+description: An idea to improve screen translation, or a new feature
+title: "[Feature] "
 labels: [enhancement]
 body:
   - type: textarea
     id: description
     attributes:
-      label: מה היית רוצה שהתוכנה תעשה?
-      description: תאר את התכונה, ואיך היא הייתה עוזרת לך.
+      label: What would you like Snap Translate to do?
+      description: Describe the feature and how it would help you translate.
     validations:
       required: true
+  - type: upload
+    id: log
+    attributes:
+      label: Log file (optional)
+      description: |
+        Attach it if it helps explain the idea.
+
+        The log file is `%LOCALAPPDATA%\SnapTranslate\error.log`. To upload it:
+        1. Click the box below. A file window opens.
+        2. Paste `%LOCALAPPDATA%\SnapTranslate\error.log` into the **File name** field and press **Enter**.
+
+        Or open the folder yourself: press **Win+R**, paste `%LOCALAPPDATA%\SnapTranslate`, press **Enter**, and drag `error.log` into the box below.
+    validations:
+      required: false
+      accept: ".log,.txt"
   - type: textarea
     id: environment
     attributes:
-      label: פרטי מערכת
-      description: ממולא אוטומטית על ידי האפליקציה.
+      label: System details
+      description: Filled in automatically by the app.
       render: text
+    validations:
+      required: true
