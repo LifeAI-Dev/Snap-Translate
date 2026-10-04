@@ -27,7 +27,7 @@ body:
     attributes:
       label: Log file
       description: |
-        The log file is `%LOCALAPPDATA%\SnapTranslate\error.log`. To upload it:
+        The log file is ```%LOCALAPPDATA%\SnapTranslate\error.log```. To upload it:
         1. Click the box below. A file window opens.
         2. Paste `%LOCALAPPDATA%\SnapTranslate\error.log` into the **File name** field and press **Enter**.
 
