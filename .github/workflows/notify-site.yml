@@ -7,8 +7,9 @@
 name: Notify website
 
 on:
+  workflow_dispatch:
   release:
-    types: [published, edited, deleted, unpublished, prereleased, released]
+    types: [published, edited, deleted, unpublished]
 
 jobs:
   notify:
