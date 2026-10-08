@@ -18,7 +18,7 @@ jobs:
       - name: Ask the website to refresh its download links
         env:
           TOKEN: ${{ secrets.SITE_DISPATCH_TOKEN }}
-          SITE_REPO: ${{ vars.SITE_REPO || 'LifeAI-Dev/lifeai-web' }}
+          SITE_REPO: ${{ vars.SITE_REPO || 'start-life/lifeai-web' }}
           PRODUCT: ${{ github.event.repository.name }}
           ACTION: ${{ github.event.action }}
           TAG: ${{ github.event.release.tag_name }}
