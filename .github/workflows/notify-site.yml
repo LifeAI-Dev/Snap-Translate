@@ -4,7 +4,11 @@
 # download links (.github/workflows/update-releases.yml in the website repo).
 # GitHub runs a release workflow from the commit the release's tag points to, so this file must
 # already be in that commit: a release tagged before the file was added never triggers it (use
-# Actions -> "Notify website" -> Run workflow for those).
+# Actions -> "Notify website" -> Run workflow for those). The same goes for changes to this file:
+# an existing release keeps the version that is in its tagged commit.
+# Ticking or clearing "Set as a pre-release" is not an "edited" event: GitHub sends "released"
+# (pre-release -> release) or "prereleased", so both are listed. One change can fire two events;
+# the website simply refreshes twice.
 # Needs the secret SITE_DISPATCH_TOKEN in the product repo (or in the organization).
 # Setup: DOWNLOADS-SETUP.md in the website repo.
 name: Notify website
@@ -12,7 +16,7 @@ name: Notify website
 on:
   workflow_dispatch:
   release:
-    types: [published, edited, deleted, unpublished]
+    types: [published, released, prereleased, edited, deleted, unpublished]
 
 jobs:
   notify:
