@@ -2,6 +2,9 @@
 #   .github/workflows/notify-site.yml
 # When a release is published, edited or deleted there, it asks the website repo to refresh its
 # download links (.github/workflows/update-releases.yml in the website repo).
+# GitHub runs a release workflow from the commit the release's tag points to, so this file must
+# already be in that commit: a release tagged before the file was added never triggers it (use
+# Actions -> "Notify website" -> Run workflow for those).
 # Needs the secret SITE_DISPATCH_TOKEN in the product repo (or in the organization).
 # Setup: DOWNLOADS-SETUP.md in the website repo.
 name: Notify website
@@ -20,7 +23,7 @@ jobs:
           TOKEN: ${{ secrets.SITE_DISPATCH_TOKEN }}
           SITE_REPO: ${{ vars.SITE_REPO || 'start-life/lifeai-web' }}
           PRODUCT: ${{ github.event.repository.name }}
-          ACTION: ${{ github.event.action }}
+          ACTION: ${{ github.event.action || github.event_name }}
           TAG: ${{ github.event.release.tag_name }}
         run: |
           if [ -z "$TOKEN" ]; then
